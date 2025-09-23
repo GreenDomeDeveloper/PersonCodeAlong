@@ -6,12 +6,14 @@ class Person {
 private:
     string name;
     int age;
+    static int population;
     bool isValidAge(int age);
 public:
     void setName(string name);
     string getName();
     void setAge(int age);
     int getAge();
+    static int getPopulation();
     Person();
     Person(string name,int age);
     void hasBirthday();

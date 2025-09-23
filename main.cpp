@@ -4,8 +4,13 @@
 using namespace std;
 
 int main(){
+
+    cout<<"Person population: "<<Person::getPopulation()<<endl;
+
     Person one;
     Person two("Sue Jones", 27);
+
+    cout<<"Person population: "<<Person::getPopulation()<<endl;
 
     one.print();
     two.print();
@@ -16,5 +21,7 @@ int main(){
     
     one.print();
     two.print();
+    cout<<one<<endl;
+    cout<<two<<endl;
 
 }

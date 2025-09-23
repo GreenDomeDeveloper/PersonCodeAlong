@@ -2,6 +2,8 @@
 #include <iostream>
 using namespace std;
 
+int Person::population = 0;
+
 bool Person::isValidAge(int age)
 {
     if (age>=0){
@@ -34,20 +36,27 @@ int Person::getAge()
     return this -> age;
 }
 
-Person::Person()
+int Person::getPopulation()
 {
-    this -> name = "John Doe";
-    this -> age = 42;
+    return Person::population;
 }
 
-Person::Person(string name, int age)
+Person::Person(): name("John Doe"), age(42)
 {
-    this -> name = name;
+   // this -> name = "John Doe";
+   // this -> age = 42;
+   Person::population++;
+}
+
+Person::Person(string name, int age): name(name)
+{
+    //this -> name = name;
     if (isValidAge(age)){
         this -> age = age;
     } else {
         this -> age = 42;
     }
+    Person::population++;
 }
     
 
