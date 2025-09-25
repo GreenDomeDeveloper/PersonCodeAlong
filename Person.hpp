@@ -16,7 +16,10 @@ public:
     static int getPopulation();
     Person();
     Person(string name,int age);
+    ~Person();
     void hasBirthday();
     void print();
+
+    friend ostream& operator<<(ostream& os, const Person& person);
 
 };

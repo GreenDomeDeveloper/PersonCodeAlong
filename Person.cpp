@@ -58,7 +58,11 @@ Person::Person(string name, int age): name(name)
     }
     Person::population++;
 }
-    
+
+Person::~Person()
+{
+    cout<<"Destructor Called"<<endl;
+}
 
 void Person::hasBirthday()
 {
@@ -68,4 +72,10 @@ void Person::hasBirthday()
 void Person::print()
 {
     cout<< "Person {\n\tName: "<< this->name<<"\n\tAge: "<<this->age<<endl<<"}"<<endl;
+}
+
+ostream &operator<<(ostream &os, const Person &person)
+{
+    os << "Person {\n\tName: "<< person.name<<"\n\tAge: "<<person.age<<endl<<"}"<<endl;
+    return os;
 }
