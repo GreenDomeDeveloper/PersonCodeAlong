@@ -45,10 +45,11 @@ Person::Person(): name("John Doe"), age(42)
 {
    // this -> name = "John Doe";
    // this -> age = 42;
+   this->weight = new double(180);
    Person::population++;
 }
 
-Person::Person(string name, int age): name(name)
+Person::Person(string name, int age,double weight): name(name)
 {
     //this -> name = name;
     if (isValidAge(age)){
@@ -56,12 +57,15 @@ Person::Person(string name, int age): name(name)
     } else {
         this -> age = 42;
     }
+    this->weight = new double(weight);
     Person::population++;
 }
 
 Person::~Person()
 {
-    cout<<"Destructor Called"<<endl;
+    cout<<"Destructor Called on "<<this->name<<endl;
+    delete this->weight;
+    Person::population--;
 }
 
 void Person::hasBirthday()

@@ -6,6 +6,7 @@ class Person {
 private:
     string name;
     int age;
+    double* weight;
     static int population;
     bool isValidAge(int age);
 public:
@@ -15,7 +16,7 @@ public:
     int getAge();
     static int getPopulation();
     Person();
-    Person(string name,int age);
+    Person(string name,int age,double weight);
     ~Person();
     void hasBirthday();
     void print();
